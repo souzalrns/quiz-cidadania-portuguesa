@@ -3,16 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz — Tenho Direito à Cidadania Portuguesa?</title>
-  <meta name="description" content="Descubra em 2 minutos se você tem direito à cidadania portuguesa. Quiz atualizado com a Lei Orgânica 1/2026." />
+  <title>Quiz — Tenho Direito à Cidadania Portuguesa? | ViannaLegal</title>
+  <meta name="description" content="Descubra em 2 minutos se você tem direito à cidadania portuguesa. Quiz gratuito, atualizado com a Lei Orgânica 1/2026. Filhos, netos, bisnetos e cônjuges." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://viannalegal.com.br/quiz" />
+
   <meta property="og:title" content="Quiz — Tenho Direito à Cidadania Portuguesa?" />
-  <meta property="og:description" content="Responda 6 perguntas e saiba seu caminho para o passaporte europeu." />
+  <meta property="og:description" content="Responda 6 perguntas e descubra seu caminho para o passaporte europeu. Gratuito, sem cadastro." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://viannalegal.com.br/quiz" />
+  <meta property="og:image" content="https://viannalegal.com.br/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Quiz — Tenho Direito à Cidadania Portuguesa?" />
+  <meta name="twitter:image" content="https://viannalegal.com.br/og-image.jpg" />
+  <meta name="theme-color" content="#0f2d23" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://viannalegal.com.br" },
+      { "@type": "ListItem", "position": 2, "name": "Quiz Cidadania Portuguesa", "item": "https://viannalegal.com.br/quiz" }
+    ]
+  }
+  </script>
+
   <style>
-    /* ── Reset & Base ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -24,7 +45,7 @@
       --cream:       #f8f3e8;
       --cream-dark:  #ede8d8;
       --text:        #1a2e24;
-      --muted:       #5a7a6a;
+      --muted:       #4a6a5a;
       --red-pt:      #b41228;
       --radius:      14px;
       --shadow:      0 8px 32px rgba(15,45,35,.13);
@@ -42,421 +63,193 @@
       align-items: center;
     }
 
-    /* ── Header ───────────────────────────────────────────────── */
+    /* Header */
     header {
       width: 100%;
       background: var(--green);
-      padding: 18px 24px;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .logo {
-      font-family: 'Lora', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--cream);
-      text-decoration: none;
-    }
+    .logo { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 700; color: var(--cream); text-decoration: none; }
     .logo span { color: var(--gold); }
-    .flag {
-      display: flex;
-      gap: 2px;
-      align-items: center;
-      height: 20px;
-    }
-    .flag div { height: 20px; }
-    .flag .g { width: 12px; background: #006600; }
-    .flag .r { width: 18px; background: var(--red-pt); }
+    .header-link { font-size: .8rem; color: rgba(248,243,232,.6); text-decoration: none; transition: color .15s; }
+    .header-link:hover { color: var(--gold); }
 
-    /* ── Main container ───────────────────────────────────────── */
-    main {
-      width: 100%;
-      max-width: 680px;
-      padding: 32px 20px 60px;
-    }
+    /* Main */
+    main { width: 100%; max-width: 680px; padding: 32px 20px 60px; }
 
-    /* ── Intro ────────────────────────────────────────────────── */
-    #intro {
-      text-align: center;
-      padding-top: 16px;
-    }
+    /* Intro */
+    #intro { text-align: center; padding-top: 16px; }
     .badge {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--green);
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 99px;
-      margin-bottom: 20px;
+      display: inline-block; background: var(--gold); color: var(--green);
+      font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 99px; margin-bottom: 20px;
     }
     #intro h1 {
       font-family: 'Lora', serif;
       font-size: clamp(1.7rem, 5vw, 2.4rem);
-      font-weight: 700;
-      color: var(--green);
-      line-height: 1.25;
-      margin-bottom: 14px;
+      font-weight: 700; color: var(--green); line-height: 1.25; margin-bottom: 14px;
     }
-    #intro p {
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.6;
-      max-width: 500px;
-      margin: 0 auto 28px;
-    }
-    .trust-row {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
-    }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: .85rem;
-      color: var(--muted);
-    }
-    .trust-item .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-    .btn-start {
-      background: var(--gold);
-      color: var(--green);
-      border: none;
-      border-radius: var(--radius);
-      padding: 16px 40px;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 4px 20px rgba(196,158,82,.35);
-      transition: transform .15s, box-shadow .15s;
-    }
-    .btn-start:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(196,158,82,.45); }
-    .btn-start:active { transform: translateY(0); }
+    #intro p { color: var(--muted); font-size: 1rem; line-height: 1.6; max-width: 500px; margin: 0 auto 28px; }
+    .trust-row { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 32px; }
+    .trust-item { display: flex; align-items: center; gap: 6px; font-size: .85rem; color: var(--muted); }
+    .trust-item .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
-    /* ── Quiz card ────────────────────────────────────────────── */
+    /* Buttons */
+    .btn-primary {
+      background: var(--gold); color: var(--green); border: none; border-radius: var(--radius);
+      padding: 15px 36px; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700;
+      cursor: pointer; box-shadow: 0 4px 20px rgba(196,158,82,.35);
+      transition: transform .15s, box-shadow .15s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(196,158,82,.45); }
+
+    /* Quiz */
     #quiz { display: none; }
 
-    .progress-wrap {
-      margin-bottom: 28px;
-    }
-    .progress-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: .8rem;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-    .progress-bar {
-      height: 5px;
-      background: var(--cream-dark);
-      border-radius: 99px;
-      overflow: hidden;
-    }
+    .progress-wrap { margin-bottom: 24px; }
+    .progress-meta { display: flex; justify-content: space-between; font-size: .8rem; color: var(--muted); margin-bottom: 8px; }
+    .progress-bar { height: 5px; background: var(--cream-dark); border-radius: 99px; overflow: hidden; }
     .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--green-light), var(--gold));
-      border-radius: 99px;
-      transition: width .4s ease;
+      height: 100%; background: linear-gradient(90deg, var(--green-light), var(--gold));
+      border-radius: 99px; transition: width .4s ease;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 36px 32px;
-      box-shadow: var(--shadow);
-    }
-
-    .step-label {
-      font-size: .75rem;
-      font-weight: 600;
-      color: var(--gold);
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .question-text {
-      font-family: 'Lora', serif;
-      font-size: clamp(1.1rem, 3.5vw, 1.35rem);
-      font-weight: 600;
-      color: var(--green);
-      line-height: 1.4;
-      margin-bottom: 8px;
-    }
-    .question-hint {
-      font-size: .85rem;
-      color: var(--muted);
-      margin-bottom: 24px;
-      line-height: 1.5;
-    }
-
-    .options { display: flex; flex-direction: column; gap: 12px; }
+    .card { background: #fff; border-radius: 20px; padding: 36px 32px; box-shadow: var(--shadow); }
+    .step-label { font-size: .75rem; font-weight: 700; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+    .question-text { font-family: 'Lora', serif; font-size: clamp(1.1rem, 3.5vw, 1.3rem); font-weight: 600; color: var(--green); line-height: 1.4; margin-bottom: 6px; }
+    .question-hint { font-size: .85rem; color: var(--muted); margin-bottom: 24px; line-height: 1.5; }
+    .options { display: flex; flex-direction: column; gap: 10px; }
 
     .opt-btn {
-      background: var(--cream);
-      border: 2px solid var(--cream-dark);
-      border-radius: var(--radius);
-      padding: 15px 20px;
-      text-align: left;
-      font-family: 'Inter', sans-serif;
-      font-size: .95rem;
-      font-weight: 500;
-      color: var(--text);
-      cursor: pointer;
+      background: var(--cream); border: 2px solid var(--cream-dark); border-radius: var(--radius);
+      padding: 13px 18px; text-align: left; font-family: 'Inter', sans-serif; font-size: .92rem;
+      font-weight: 500; color: var(--text); cursor: pointer;
       transition: border-color .15s, background .15s, transform .1s;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      display: flex; align-items: center; gap: 12px;
     }
-    .opt-btn:hover {
-      border-color: var(--gold);
-      background: #fff;
-      transform: translateX(4px);
+    .opt-btn:hover { border-color: var(--gold); background: #fff; transform: translateX(4px); }
+    .opt-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .opt-icon {
+      width: 34px; height: 34px; border-radius: 50%; background: var(--cream-dark);
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+      flex-shrink: 0; transition: background .15s;
     }
-    .opt-btn .opt-icon {
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      background: var(--cream-dark);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-      transition: background .15s;
-    }
-    .opt-btn:hover .opt-icon { background: var(--gold-light); }
+    .opt-btn:hover .opt-icon { background: rgba(196,158,82,.2); }
+    .opt-arrow { margin-left: auto; color: var(--muted); font-size: .85rem; flex-shrink: 0; transition: transform .15s; }
+    .opt-btn:hover .opt-arrow { transform: translateX(3px); color: var(--gold); }
 
     .btn-back {
-      margin-top: 20px;
-      background: none;
-      border: none;
-      color: var(--muted);
-      font-size: .85rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 0;
-      transition: color .15s;
+      margin-top: 20px; background: none; border: none; color: var(--muted);
+      font-size: .85rem; cursor: pointer; display: flex; align-items: center; gap: 6px;
+      padding: 4px 0; transition: color .15s;
     }
     .btn-back:hover { color: var(--green); }
 
-    /* ── Result ───────────────────────────────────────────────── */
+    /* Result */
     #result { display: none; }
 
-    .result-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 40px 32px;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-    .result-icon {
-      width: 72px; height: 72px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
-      margin: 0 auto 20px;
-    }
-    .icon-green  { background: #e6f4ed; }
-    .icon-yellow { background: #fdf6e3; }
-    .icon-orange { background: #fdeee6; }
-    .icon-red    { background: #fde8e8; }
-
+    .result-card { background: #fff; border-radius: 20px; padding: 36px 32px; box-shadow: var(--shadow); margin-bottom: 16px; }
+    .result-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+    .result-icon { font-size: 2.4rem; line-height: 1; flex-shrink: 0; }
     .result-tag {
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+      display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 99px; margin-bottom: 8px;
     }
-    .tag-green  { color: #1a7a46; }
-    .tag-yellow { color: #8a6a00; }
-    .tag-orange { color: #c05a00; }
-    .tag-red    { color: #a01020; }
+    .tag-green  { background: #e6f4ed; color: #1a7a46; }
+    .tag-yellow { background: #fdf6e3; color: #8a6a00; }
+    .tag-orange { background: #fdeee6; color: #c05a00; }
+    .tag-red    { background: #fde8e8; color: #a01020; }
 
-    .result-title {
-      font-family: 'Lora', serif;
-      font-size: clamp(1.3rem, 4vw, 1.75rem);
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 14px;
-      line-height: 1.3;
-    }
-    .result-desc {
-      color: var(--muted);
-      font-size: .95rem;
-      line-height: 1.65;
-      margin-bottom: 24px;
-    }
+    .result-title { font-family: 'Lora', serif; font-size: clamp(1.2rem, 3.5vw, 1.55rem); font-weight: 700; color: var(--green); line-height: 1.3; }
+    .result-desc { color: var(--muted); font-size: .95rem; line-height: 1.65; margin-bottom: 22px; }
 
-    .docs-box {
-      background: var(--cream);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      text-align: left;
-      margin-bottom: 24px;
+    .result-timeline {
+      display: flex; align-items: center; gap: 8px; background: var(--cream);
+      border-radius: 10px; padding: 10px 16px; margin-bottom: 20px; font-size: .85rem;
     }
-    .docs-box h4 {
-      font-size: .85rem;
-      font-weight: 700;
-      color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: 12px;
-    }
-    .docs-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-    .docs-list li {
-      font-size: .88rem;
-      color: var(--text);
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      line-height: 1.45;
-    }
-    .docs-list li::before {
-      content: '✓';
-      color: var(--green-light);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
+    .result-timeline strong { color: var(--green); }
+
+    .docs-box { background: var(--cream); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 20px; }
+    .docs-box h4 { font-size: .8rem; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 12px; }
+    .docs-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .docs-list li { font-size: .88rem; color: var(--text); display: flex; align-items: flex-start; gap: 8px; line-height: 1.45; }
+    .docs-list li::before { content: '✓'; color: var(--green-light); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .next-steps { background: #f0f8f4; border-left: 3px solid var(--green-light); border-radius: 0 10px 10px 0; padding: 14px 18px; margin-bottom: 20px; }
+    .next-steps h4 { font-size: .8rem; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+    .next-steps ol { padding-left: 18px; }
+    .next-steps li { font-size: .85rem; color: var(--muted); line-height: 1.5; margin-bottom: 4px; }
 
     .disclaimer {
-      background: #fff8e6;
-      border-left: 3px solid var(--gold);
-      border-radius: 0 8px 8px 0;
-      padding: 12px 16px;
-      font-size: .8rem;
-      color: #6a5200;
-      line-height: 1.5;
-      text-align: left;
-      margin-bottom: 28px;
+      background: #fff8e6; border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0;
+      padding: 12px 16px; font-size: .8rem; color: #6a5200; line-height: 1.5; margin-bottom: 24px;
     }
 
-    /* ── Lead form ────────────────────────────────────────────── */
-    .lead-card {
-      background: var(--green);
-      border-radius: 20px;
-      padding: 36px 32px;
-      margin-top: 20px;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-    .lead-card h3 {
-      font-family: 'Lora', serif;
-      font-size: 1.3rem;
-      color: var(--cream);
-      margin-bottom: 8px;
-    }
-    .lead-card p {
-      font-size: .88rem;
-      color: rgba(248,243,232,.7);
-      margin-bottom: 22px;
-      line-height: 1.5;
-    }
-    .lead-form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+    /* Lead */
+    .lead-card { background: var(--green); border-radius: 20px; padding: 36px 32px; box-shadow: var(--shadow); }
+    .lead-card h3 { font-family: 'Lora', serif; font-size: 1.3rem; color: var(--cream); margin-bottom: 6px; }
+    .lead-card p { font-size: .88rem; color: rgba(248,243,232,.65); margin-bottom: 22px; line-height: 1.5; }
+
+    .lead-form { display: flex; flex-direction: column; gap: 11px; }
+    .field-wrap { display: flex; flex-direction: column; gap: 4px; }
+    .field-label { font-size: .75rem; font-weight: 600; color: rgba(248,243,232,.6); letter-spacing: .04em; text-transform: uppercase; }
+    .field-error { font-size: .75rem; color: #f87171; display: none; }
+    .field-error.visible { display: block; }
+
     .lead-form input {
-      border: none;
-      border-radius: var(--radius);
-      padding: 14px 18px;
-      font-family: 'Inter', sans-serif;
-      font-size: .95rem;
-      background: rgba(255,255,255,.1);
-      color: var(--cream);
-      outline: none;
-      transition: background .15s;
+      border: 1.5px solid rgba(255,255,255,.15); border-radius: var(--radius);
+      padding: 13px 16px; font-family: 'Inter', sans-serif; font-size: .95rem;
+      background: rgba(255,255,255,.09); color: var(--cream);
+      outline: none; transition: border-color .15s, background .15s;
     }
-    .lead-form input::placeholder { color: rgba(248,243,232,.45); }
-    .lead-form input:focus { background: rgba(255,255,255,.18); }
+    .lead-form input::placeholder { color: rgba(248,243,232,.35); }
+    .lead-form input:focus { border-color: var(--gold); background: rgba(255,255,255,.14); }
+    .lead-form input.error { border-color: #f87171; }
 
     .btn-cta {
-      background: var(--gold);
-      color: var(--green);
-      border: none;
-      border-radius: var(--radius);
-      padding: 15px;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform .15s, box-shadow .15s;
-      box-shadow: 0 4px 20px rgba(196,158,82,.3);
+      background: var(--gold); color: var(--green); border: none; border-radius: var(--radius);
+      padding: 15px; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 20px rgba(196,158,82,.3); margin-top: 4px;
     }
     .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(196,158,82,.45); }
+    .btn-cta:disabled { opacity: .6; cursor: not-allowed; transform: none; }
 
     .whatsapp-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: #25d366;
-      color: #fff;
-      border: none;
-      border-radius: var(--radius);
-      padding: 15px;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: opacity .15s;
-      margin-top: 10px;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: #25d366; color: #fff; border: none; border-radius: var(--radius);
+      padding: 14px; font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 600;
+      cursor: pointer; text-decoration: none; transition: opacity .15s; margin-top: 10px;
     }
     .whatsapp-btn:hover { opacity: .9; }
-    .whatsapp-btn svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
+    .whatsapp-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
+
+    .divider { display: flex; align-items: center; gap: 12px; margin: 14px 0; }
+    .divider span { font-size: .75rem; color: rgba(248,243,232,.35); white-space: nowrap; }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.12); }
 
     .restart-btn {
-      margin-top: 16px;
-      background: none;
-      border: none;
-      color: rgba(248,243,232,.5);
-      font-size: .82rem;
-      cursor: pointer;
-      text-decoration: underline;
+      margin-top: 18px; background: none; border: none; color: rgba(248,243,232,.4);
+      font-size: .8rem; cursor: pointer; text-decoration: underline; display: block; width: 100%; text-align: center;
     }
+    .restart-btn:hover { color: rgba(248,243,232,.65); }
 
-    /* ── Thankyou ─────────────────────────────────────────────── */
-    .thankyou {
-      text-align: center;
-      padding: 16px 0 0;
-      display: none;
-    }
-    .thankyou p { color: var(--cream); font-size: .9rem; line-height: 1.6; }
+    .thankyou { text-align: center; padding: 12px 0; display: none; }
+    .thankyou .ty-icon { font-size: 2.5rem; margin-bottom: 8px; }
+    .thankyou p { color: rgba(248,243,232,.8); font-size: .9rem; line-height: 1.6; }
+    .thankyou strong { color: var(--gold); }
 
-    /* ── Footer ───────────────────────────────────────────────── */
-    footer {
-      width: 100%;
-      background: var(--green);
-      padding: 16px 24px;
-      text-align: center;
-      font-size: .75rem;
-      color: rgba(248,243,232,.45);
-      margin-top: auto;
-    }
+    /* Footer */
+    footer { width: 100%; background: var(--green); padding: 16px 24px; text-align: center; font-size: .75rem; color: rgba(248,243,232,.4); margin-top: auto; }
     footer a { color: var(--gold); text-decoration: none; }
 
-    /* ── Responsive ───────────────────────────────────────────── */
+    /* Responsive */
     @media (max-width: 480px) {
-      .card, .result-card, .lead-card { padding: 28px 20px; }
-      .trust-row { gap: 14px; }
+      .card, .result-card, .lead-card { padding: 24px 18px; }
+      .trust-row { gap: 12px; }
     }
   </style>
 </head>
@@ -464,66 +257,84 @@
 
 <header>
   <a href="https://viannalegal.com.br" class="logo">Vianna<span>Legal</span></a>
-  <div class="flag" aria-label="Bandeira de Portugal">
-    <div class="g"></div>
-    <div class="r"></div>
-  </div>
+  <a href="https://viannalegal.com.br" class="header-link">← Voltar ao site</a>
 </header>
 
 <main>
 
-  <!-- ── INTRO ──────────────────────────────────────────────────── -->
-  <section id="intro">
+  <!-- INTRO -->
+  <section id="intro" aria-label="Início do quiz">
     <div class="badge">Atualizado · Lei Orgânica 1/2026</div>
     <h1>Você tem direito à<br>cidadania portuguesa?</h1>
-    <p>Responda 6 perguntas rápidas e descubra qual é o seu caminho para o passaporte europeu — com base na legislação atual.</p>
-    <div class="trust-row">
-      <div class="trust-item"><div class="dot"></div>2 minutos</div>
+    <p>Responda as perguntas abaixo e descubra qual é o seu caminho para o passaporte europeu — com base na legislação vigente.</p>
+    <div class="trust-row" aria-label="Características do quiz">
       <div class="trust-item"><div class="dot"></div>Gratuito</div>
       <div class="trust-item"><div class="dot"></div>Sem cadastro</div>
+      <div class="trust-item"><div class="dot"></div>Resultado imediato</div>
       <div class="trust-item"><div class="dot"></div>Lei 1/2026 aplicada</div>
     </div>
-    <button class="btn-start" onclick="startQuiz()">Descobrir meu direito agora →</button>
+    <button class="btn-primary" onclick="startQuiz()" aria-label="Iniciar quiz de cidadania portuguesa">
+      Descobrir meu direito agora
+      <span aria-hidden="true">→</span>
+    </button>
   </section>
 
-  <!-- ── QUIZ ───────────────────────────────────────────────────── -->
-  <section id="quiz">
-    <div class="progress-wrap">
+  <!-- QUIZ -->
+  <section id="quiz" aria-live="polite" aria-label="Perguntas do quiz">
+    <div class="progress-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="progress-aria">
       <div class="progress-meta">
         <span id="step-label">Pergunta 1</span>
-        <span id="step-count">1 / 6</span>
+        <span id="step-count"></span>
       </div>
       <div class="progress-bar">
-        <div class="progress-fill" id="progress-fill" style="width:16%"></div>
+        <div class="progress-fill" id="progress-fill" style="width:10%"></div>
       </div>
     </div>
 
     <div class="card">
-      <div class="step-label" id="q-category">Vínculo familiar</div>
+      <div class="step-label" id="q-category"></div>
       <h2 class="question-text" id="q-text"></h2>
       <p class="question-hint" id="q-hint"></p>
-      <div class="options" id="q-options"></div>
-      <button class="btn-back" id="btn-back" onclick="goBack()" style="display:none">
+      <div class="options" id="q-options" role="list"></div>
+      <button class="btn-back" id="btn-back" onclick="goBack()" style="display:none" aria-label="Voltar à pergunta anterior">
         ← Voltar
       </button>
     </div>
   </section>
 
-  <!-- ── RESULT ─────────────────────────────────────────────────── -->
-  <section id="result">
+  <!-- RESULT -->
+  <section id="result" aria-label="Resultado do quiz">
+
     <div class="result-card">
-      <div class="result-icon" id="r-icon"></div>
-      <div class="result-tag" id="r-tag"></div>
-      <h2 class="result-title" id="r-title"></h2>
+      <div class="result-header">
+        <div class="result-icon" id="r-icon" aria-hidden="true"></div>
+        <div>
+          <div class="result-tag" id="r-tag"></div>
+          <h2 class="result-title" id="r-title"></h2>
+        </div>
+      </div>
+
       <p class="result-desc" id="r-desc"></p>
-      <div class="docs-box" id="r-docs-box">
+
+      <div class="result-timeline" id="r-timeline" style="display:none">
+        ⏱ Prazo médio estimado: <strong id="r-prazo"></strong>
+      </div>
+
+      <div class="docs-box" id="r-docs-box" style="display:none">
         <h4>📋 Documentos principais necessários</h4>
-        <ul class="docs-list" id="r-docs"></ul>
+        <ul class="docs-list" id="r-docs" aria-label="Lista de documentos necessários"></ul>
       </div>
-      <div class="disclaimer">
-        ⚠️ <strong>Aviso legal:</strong> Este quiz é apenas informativo e não substitui análise jurídica individualizada. Cada caso tem suas particularidades. Consulte sempre um advogado especializado antes de iniciar seu processo.
+
+      <div class="next-steps" id="r-steps-box" style="display:none">
+        <h4>✅ Próximos passos</h4>
+        <ol id="r-steps"></ol>
       </div>
-      <button class="btn-start" onclick="restartQuiz()" style="background:var(--green);color:var(--cream);box-shadow:none">
+
+      <div class="disclaimer" role="note">
+        ⚠️ <strong>Aviso legal:</strong> Este quiz é apenas informativo e não substitui análise jurídica individualizada. Cada caso tem particularidades próprias. Consulte sempre um advogado especializado antes de iniciar seu processo.
+      </div>
+
+      <button class="btn-primary" onclick="restartQuiz()" style="background:var(--green);color:var(--cream);box-shadow:none;width:100%;justify-content:center">
         Refazer o quiz
       </button>
     </div>
@@ -533,90 +344,122 @@
       <h3>Quer uma análise gratuita do seu caso?</h3>
       <p>Um especialista da ViannaLegal revisa seu perfil e te diz exatamente o que fazer — sem custo nessa etapa.</p>
 
-      <div class="lead-form" id="lead-form">
-        <input type="text"  id="lead-name"  placeholder="Seu nome completo" autocomplete="name" />
-        <input type="email" id="lead-email" placeholder="Seu melhor e-mail" autocomplete="email" />
-        <input type="tel"   id="lead-phone" placeholder="WhatsApp (com DDD)" autocomplete="tel" />
-        <button class="btn-cta" onclick="submitLead()">Quero minha análise gratuita</button>
+      <div class="lead-form" id="lead-form" novalidate>
+        <div class="field-wrap">
+          <label class="field-label" for="lead-name">Nome completo *</label>
+          <input type="text" id="lead-name" placeholder="Seu nome" autocomplete="name" aria-required="true" />
+          <span class="field-error" id="err-name">Por favor, informe seu nome.</span>
+        </div>
+        <div class="field-wrap">
+          <label class="field-label" for="lead-email">E-mail *</label>
+          <input type="email" id="lead-email" placeholder="seu@email.com" autocomplete="email" aria-required="true" />
+          <span class="field-error" id="err-email">Informe um e-mail válido.</span>
+        </div>
+        <div class="field-wrap">
+          <label class="field-label" for="lead-phone">WhatsApp (com DDD)</label>
+          <input type="tel" id="lead-phone" placeholder="(11) 99999-9999" autocomplete="tel" />
+        </div>
+        <button class="btn-cta" onclick="submitLead()" id="btn-submit">
+          Quero minha análise gratuita
+        </button>
       </div>
 
       <div class="thankyou" id="thankyou">
-        <p>✅ <strong style="color:var(--gold)">Recebemos sua solicitação!</strong><br>Um especialista entrará em contato em até 24h.</p>
+        <div class="ty-icon">✅</div>
+        <p><strong>Solicitação recebida!</strong><br>Um especialista entrará em contato em até 24h.</p>
       </div>
 
-      <a class="whatsapp-btn" href="https://wa.me/351913134260?text=Olá!%20Fiz%20o%20quiz%20de%20cidadania%20e%20gostaria%20de%20uma%20análise%20do%20meu%20caso." target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <div class="divider"><span>ou fale agora</span></div>
+
+      <a class="whatsapp-btn"
+         href="https://wa.me/351913134260?text=Olá!%20Fiz%20o%20quiz%20de%20cidadania%20e%20gostaria%20de%20uma%20análise%20gratuita."
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Abrir conversa no WhatsApp com a ViannaLegal">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
         Falar no WhatsApp agora
       </a>
 
-      <button class="restart-btn" onclick="restartQuiz()">Refazer o quiz</button>
+      <button class="restart-btn" onclick="restartQuiz()">Recomeçar o quiz</button>
     </div>
+
   </section>
 
 </main>
 
 <footer>
-  Quiz informativo · <a href="https://viannalegal.com.br">ViannaLegal</a> · Não constitui aconselhamento jurídico
+  Quiz informativo · <a href="https://viannalegal.com.br">ViannaLegal</a> · Kathia Vianna — Advogada especialista em Nacionalidade Portuguesa · Não constitui aconselhamento jurídico
 </footer>
 
 <script>
-// ═══════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
 //  ÁRVORE DE DECISÃO — Lei Orgânica 1/2026
-// ═══════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
 
 const QUESTIONS = {
 
   q1: {
-    category: 'Vínculo familiar',
+    category: 'Vínculo com Portugal',
     text: 'Qual é a sua relação com Portugal?',
-    hint: 'Escolha a opção que melhor descreve seu vínculo com cidadãos portugueses.',
+    hint: 'Escolha a opção que melhor descreve seu vínculo.',
     options: [
-      { icon: '👶', label: 'Sou filho(a) de cidadão(ã) português(a)',         next: 'q_filho' },
-      { icon: '👴', label: 'Sou neto(a) de avô/avó português(a)',             next: 'q_neto' },
-      { icon: '👵', label: 'Sou bisneto(a) de bisavô/bisavó português(a)',    next: 'q_bisneto' },
-      { icon: '💍', label: 'Sou casado(a) ou em união de facto com português(a)', next: 'q_conjuge' },
-      { icon: '🏡', label: 'Resido legalmente em Portugal',                   next: 'q_residencia' },
-      { icon: '❓', label: 'Nenhuma das anteriores',                          next: 'result_nenhum' },
+      { icon: '👶', label: 'Sou filho(a) de cidadão(ã) português(a)',             next: 'q_filho_idade' },
+      { icon: '👴', label: 'Sou neto(a) de avô/avó português(a)',                 next: 'q_neto_vivo' },
+      { icon: '👵', label: 'Sou bisneto(a) de bisavô/bisavó português(a)',        next: 'q_bisneto_res' },
+      { icon: '💍', label: 'Sou casado(a) / união de facto com português(a)',     next: 'q_conjuge_tempo' },
+      { icon: '🏡', label: 'Resido legalmente em Portugal',                       next: 'q_residencia_anos' },
+      { icon: '❓', label: 'Nenhuma das anteriores',                              next: 'result_nenhum' },
     ],
   },
 
-  // ── FILHO ────────────────────────────────────────────────────
-  q_filho: {
+  // ── FILHOS ──────────────────────────────────────────
+  q_filho_idade: {
     category: 'Filiação',
-    text: 'Seu pai ou mãe é cidadão(ã) português(a) de nascimento ou naturalizado(a)?',
-    hint: 'A nacionalidade pode ter sido adquirida por nascimento ou por naturalização.',
+    text: 'Você é menor ou maior de 18 anos?',
+    hint: 'O processo e os prazos são diferentes para menores e maiores de idade.',
     options: [
-      { icon: '🇵🇹', label: 'Português(a) de nascimento',   next: 'q_filho_menor' },
-      { icon: '📜',  label: 'Naturalizado(a) português(a)', next: 'q_filho_menor' },
-      { icon: '🤔',  label: 'Não tenho certeza',            next: 'q_filho_menor' },
+      { icon: '🧒', label: 'Menor de 18 anos', next: 'result_filho_menor' },
+      { icon: '🧑', label: 'Maior de 18 anos', next: 'result_filho_maior' },
     ],
   },
 
-  q_filho_menor: {
-    category: 'Filiação',
-    text: 'Você é menor de 18 anos ou maior de 18 anos?',
-    hint: 'O processo é diferente para menores e maiores de idade.',
-    options: [
-      { icon: '🧒', label: 'Menor de 18 anos',  next: 'result_filho_menor' },
-      { icon: '🧑', label: 'Maior de 18 anos',  next: 'result_filho_maior' },
-    ],
-  },
-
-  // ── NETO ────────────────────────────────────────────────────
-  q_neto: {
+  // ── NETOS ───────────────────────────────────────────
+  q_neto_vivo: {
     category: 'Descendência — Netos',
-    text: 'Esse avô ou avó português(a) já faleceu ou ainda está vivo(a)?',
-    hint: 'Isso afeta quais documentos serão necessários no processo.',
+    text: 'O avô ou avó português(a) ainda está vivo(a)?',
+    hint: 'Isso impacta a documentação e a cadeia de prova necessária.',
     options: [
-      { icon: '🕊️', label: 'Já faleceu',        next: 'q_neto_pai_pt' },
-      { icon: '😊',  label: 'Ainda está vivo(a)', next: 'q_neto_pai_pt' },
+      { icon: '😊', label: 'Sim, está vivo(a)',          next: 'q_neto_pai_pt' },
+      { icon: '🕊️', label: 'Não, já faleceu',           next: 'q_neto_obito' },
+      { icon: '🤷', label: 'Não sei / Não tenho certeza', next: 'q_neto_pai_pt' },
+    ],
+  },
+
+  q_neto_obito: {
+    category: 'Descendência — Netos',
+    text: 'Você tem acesso à certidão de óbito do avô/avó português(a)?',
+    hint: 'A certidão de óbito é fundamental para comprovar a cadeia de descendência quando o avô já faleceu.',
+    options: [
+      { icon: '✅', label: 'Sim, tenho ou consigo obter',         next: 'q_neto_pai_pt' },
+      { icon: '⚠️', label: 'Não tenho e pode ser difícil obter', next: 'q_neto_sem_obito' },
+    ],
+  },
+
+  q_neto_sem_obito: {
+    category: 'Descendência — Netos',
+    text: 'Você sabe em qual município de Portugal o avô/avó nasceu ou foi registado?',
+    hint: 'Com a localidade de origem, é possível fazer pesquisa genealógica para localizar os documentos.',
+    options: [
+      { icon: '✅', label: 'Sim, sei a localidade de origem',   next: 'q_neto_pai_pt' },
+      { icon: '❌', label: 'Não sei a localidade de origem',    next: 'result_neto_pesquisa' },
     ],
   },
 
   q_neto_pai_pt: {
     category: 'Descendência — Netos',
-    text: 'Seu pai ou sua mãe (filho(a) do avô/avó português) chegou a ter a nacionalidade portuguesa?',
-    hint: 'Se seu pai/mãe nunca teve a nacionalidade portuguesa, pode haver exigências adicionais.',
+    text: 'Seu pai ou mãe (filho(a) do avô/avó) tem ou já teve a nacionalidade portuguesa?',
+    hint: 'Essa informação determina a robustez da cadeia documental do seu processo.',
     options: [
       { icon: '✅', label: 'Sim, tem ou teve nacionalidade portuguesa', next: 'result_neto_forte' },
       { icon: '❌', label: 'Não, nunca teve nacionalidade portuguesa',  next: 'result_neto_fraco' },
@@ -624,69 +467,94 @@ const QUESTIONS = {
     ],
   },
 
-  // ── BISNETO ─────────────────────────────────────────────────
-  q_bisneto: {
+  // ── BISNETOS ────────────────────────────────────────
+  q_bisneto_res: {
     category: 'Descendência — Bisnetos',
-    text: 'Você reside legalmente em Portugal há pelo menos 5 anos?',
-    hint: 'A Lei Orgânica 1/2026 criou a via para bisnetos, mas exige residência legal em Portugal de no mínimo 5 anos.',
+    text: 'Você reside legalmente em Portugal?',
+    hint: 'A Lei Orgânica 1/2026 criou a via para bisnetos, mas exige residência legal mínima de 5 anos em Portugal.',
     options: [
-      { icon: '🏠', label: 'Sim, resido em Portugal há 5+ anos', next: 'result_bisneto_ok' },
-      { icon: '✈️', label: 'Não, moro no Brasil',                next: 'result_bisneto_nao' },
-      { icon: '📅', label: 'Resido há menos de 5 anos',          next: 'result_bisneto_aguardar' },
+      { icon: '🏠', label: 'Sim, resido em Portugal',   next: 'q_bisneto_anos' },
+      { icon: '✈️', label: 'Não, moro no Brasil',       next: 'result_bisneto_nao' },
     ],
   },
 
-  // ── CÔNJUGE ─────────────────────────────────────────────────
-  q_conjuge: {
+  q_bisneto_anos: {
+    category: 'Descendência — Bisnetos',
+    text: 'Há quantos anos reside legalmente em Portugal?',
+    hint: 'O prazo mínimo exigido pela Lei 1/2026 para a via de bisnetos é de 5 anos de residência legal.',
+    options: [
+      { icon: '✅', label: '5 anos ou mais',       next: 'result_bisneto_ok' },
+      { icon: '⏳', label: 'Entre 2 e 4 anos',    next: 'result_bisneto_aguardar' },
+      { icon: '📅', label: 'Menos de 2 anos',     next: 'result_bisneto_cedo' },
+    ],
+  },
+
+  // ── CÔNJUGE ─────────────────────────────────────────
+  q_conjuge_tempo: {
     category: 'Casamento / União de Facto',
     text: 'Há quanto tempo dura este casamento ou união de facto?',
     hint: 'A lei exige um período mínimo de relacionamento comprovado.',
     options: [
-      { icon: '📅', label: 'Menos de 3 anos',    next: 'result_conjuge_cedo' },
-      { icon: '✅', label: '3 anos ou mais',      next: 'result_conjuge_ok' },
+      { icon: '✅', label: '3 anos ou mais',  next: 'q_conjuge_prova' },
+      { icon: '📅', label: 'Menos de 3 anos', next: 'result_conjuge_cedo' },
     ],
   },
 
-  // ── RESIDÊNCIA ───────────────────────────────────────────────
-  q_residencia: {
+  q_conjuge_prova: {
+    category: 'Casamento / União de Facto',
+    text: 'Você tem comprovantes da vida em comum com o(a) cônjuge português(a)?',
+    hint: 'Exemplos: conta bancária conjunta, contratos de arrendamento, fotos, passagens aéreas, registos fiscais.',
+    options: [
+      { icon: '✅', label: 'Sim, tenho vários comprovantes',       next: 'result_conjuge_ok' },
+      { icon: '⚠️', label: 'Tenho poucos ou estão desorganizados', next: 'result_conjuge_fracos' },
+      { icon: '❌', label: 'Não tenho comprovantes',               next: 'result_conjuge_sem_prova' },
+    ],
+  },
+
+  // ── RESIDÊNCIA ──────────────────────────────────────
+  q_residencia_anos: {
     category: 'Naturalização por Residência',
     text: 'Há quantos anos você reside legalmente em Portugal?',
-    hint: 'A Lei Orgânica 1/2026 aumentou o prazo para brasileiros e cidadãos CPLP.',
+    hint: 'A Lei Orgânica 1/2026 aumentou o prazo para brasileiros e cidadãos CPLP para 7 anos.',
     options: [
-      { icon: '📅', label: 'Menos de 5 anos',              next: 'result_residencia_cedo' },
-      { icon: '⏳', label: 'Entre 5 e 7 anos',             next: 'result_residencia_quase' },
-      { icon: '✅', label: '7 anos ou mais (brasileiros)',  next: 'result_residencia_ok' },
-      { icon: '✅', label: '5 anos ou mais (outros países)', next: 'result_residencia_ok5' },
+      { icon: '✅', label: '7 anos ou mais (brasileiro/CPLP)',  next: 'result_residencia_ok' },
+      { icon: '✅', label: '5 anos ou mais (outros países)',    next: 'result_residencia_ok5' },
+      { icon: '⏳', label: 'Entre 5 e 7 anos (brasileiro)',    next: 'result_residencia_quase' },
+      { icon: '📅', label: 'Menos de 5 anos',                 next: 'result_residencia_cedo' },
     ],
   },
 };
 
-// ═══════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
 //  RESULTADOS
-// ═══════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
 
 const RESULTS = {
 
   result_filho_menor: {
-    type: 'green',
-    icon: '🌟',
-    tag: 'Alta probabilidade',
-    title: 'Cidadania por filiação — via simplificada',
-    desc: 'Como filho(a) menor de idade de cidadão(ã) português(a), você tem o direito mais direto à nacionalidade. O processo é o mais rápido do sistema — geralmente entre 6 e 8 meses — e pode ser feito 100% online.',
+    type: 'green', icon: '🌟', tag: 'Alta probabilidade',
+    title: 'Cidadania por filiação — via mais rápida',
+    prazo: '6 a 8 meses',
+    desc: 'Como filho(a) menor de cidadão(ã) português(a), você tem o caminho mais direto e rápido. O processo pode ser conduzido 100% online, sem precisar vir a Portugal.',
     docs: [
       'Certidão de nascimento do filho (apostilada)',
       'Certidão de nascimento do pai/mãe português(a)',
-      'Prova de nacionalidade portuguesa do pai/mãe (cartão de cidadão ou passaporte PT)',
-      'Certidão de casamento dos pais (se aplicável)',
+      'Prova de nacionalidade portuguesa do pai/mãe (CC ou passaporte PT)',
+      'Certidão de casamento dos pais ou reconhecimento de paternidade (se aplicável)',
+    ],
+    steps: [
+      'Reunir certidão de nascimento apostilada',
+      'Confirmar nacionalidade portuguesa do pai/mãe',
+      'Submeter pedido no IRN (Instituto dos Registos e Notariado)',
+      'Aguardar análise e emissão do assento de nascimento português',
     ],
   },
 
   result_filho_maior: {
-    type: 'green',
-    icon: '✅',
-    tag: 'Alta probabilidade',
+    type: 'green', icon: '✅', tag: 'Alta probabilidade',
     title: 'Cidadania por filiação — filho maior de idade',
-    desc: 'Filho(a) maior de idade de cidadão(ã) português(a) tem direito à nacionalidade portuguesa. O processo demora entre 12 e 14 meses e pode ser conduzido inteiramente à distância, sem precisar vir a Portugal.',
+    prazo: '12 a 14 meses',
+    desc: 'Filho(a) maior de cidadão(ã) português(a) tem direito à nacionalidade. O processo é conduzido inteiramente à distância, sem precisar vir a Portugal.',
     docs: [
       'Certidão de nascimento do requerente (apostilada)',
       'Certidão de nascimento do pai/mãe português(a)',
@@ -694,201 +562,353 @@ const RESULTS = {
       'Certidão de casamento dos pais ou reconhecimento de paternidade',
       'Documento de identidade válido',
     ],
+    steps: [
+      'Apostilar certidão de nascimento no Brasil',
+      'Obter prova de nacionalidade do pai/mãe (cópia do CC português)',
+      'Submeter pedido no IRN via advogado habilitado',
+      'Aguardar análise e emissão do registo de nascimento',
+    ],
   },
 
   result_neto_forte: {
-    type: 'green',
-    icon: '🇵🇹',
-    tag: 'Boa probabilidade',
+    type: 'green', icon: '🇵🇹', tag: 'Boa probabilidade',
     title: 'Cidadania por descendência — neto(a)',
-    desc: 'Neto(a) de português(a) com linha de filiação comprovada tem direito à nacionalidade. Como seu pai/mãe também tem ou teve a nacionalidade portuguesa, a cadeia documental é mais sólida. Prazo médio: 24 a 42 meses.',
+    prazo: '24 a 42 meses',
+    desc: 'Com linha de filiação comprovada e pai/mãe que também tem ou teve a nacionalidade portuguesa, a cadeia documental é sólida. Atenção: a Lei 1/2026 adicionou exigências de vínculo efetivo com Portugal.',
     docs: [
       'Certidão de nascimento do requerente (apostilada)',
-      'Certidão de nascimento do pai/mãe (que é filho(a) do avô/avó)',
+      'Certidão de nascimento do pai/mãe',
       'Certidão de nascimento do avô/avó português(a)',
-      'Prova de nacionalidade portuguesa do avô/avó (assento de nascimento em Portugal)',
-      'Certidão de casamento dos avós (se aplicável)',
+      'Assento de nascimento do avô/avó nos registros portugueses (conservatória)',
+      'Certidão de casamento dos avós (apostilada)',
       'Certidão de óbito do avô/avó (se falecido)',
+      'Comprovantes de vínculo efetivo com Portugal',
+    ],
+    steps: [
+      'Localizar o assento de nascimento do avô/avó em Portugal',
+      'Apostilar todos os documentos brasileiros',
+      'Comprovar vínculo efetivo com Portugal (visitas, idioma, associações)',
+      'Submeter pedido no IRN via advogado habilitado',
     ],
   },
 
   result_neto_fraco: {
-    type: 'yellow',
-    icon: '⚠️',
-    tag: 'Verificação necessária',
-    title: 'Descendência — análise mais cuidadosa',
-    desc: 'Seu caso exige atenção: quando o elo intermediário (pai/mãe) nunca teve a nacionalidade portuguesa, pode haver exigências adicionais de prova de vínculo. Isso não inviabiliza o processo, mas requer análise especializada.',
+    type: 'yellow', icon: '⚠️', tag: 'Análise necessária',
+    title: 'Descendência — elo intermediário sem nacionalidade',
+    prazo: '24 a 42 meses (com análise prévia)',
+    desc: 'Quando o pai/mãe nunca teve a nacionalidade portuguesa, pode haver exigências adicionais de prova de vínculo. Não inviabiliza o processo, mas requer análise especializada antes de iniciar.',
     docs: [
       'Certidão de nascimento do requerente (apostilada)',
       'Certidão de nascimento do pai/mãe',
       'Certidão de nascimento do avô/avó em Portugal',
       'Assento de nascimento do avô/avó nos registros portugueses',
       'Documentos que comprovem a linha de descendência ininterrupta',
+      'Comprovantes de vínculo efetivo com Portugal',
+    ],
+    steps: [
+      'Consultar advogado para análise do caso específico',
+      'Pesquisar registros do avô/avó na conservatória portuguesa',
+      'Documentar a cadeia de descendência completa',
+      'Avaliar a viabilidade antes de investir no processo',
     ],
   },
 
   result_neto_verificar: {
-    type: 'yellow',
-    icon: '🔍',
-    tag: 'Precisa verificar',
+    type: 'yellow', icon: '🔍', tag: 'Verificação necessária',
     title: 'Consulte um especialista para confirmar',
-    desc: 'Seu perfil tem potencial, mas é preciso verificar se seu pai/mãe já teve a nacionalidade portuguesa. Essa informação muda o caminho documental. Um especialista pode confirmar isso rapidamente consultando os registros do IRN.',
+    prazo: 'A confirmar após análise',
+    desc: 'Seu perfil tem potencial, mas é preciso verificar se seu pai/mãe já teve a nacionalidade portuguesa. Essa informação muda o caminho documental. Um especialista verifica isso rapidamente junto ao IRN.',
     docs: [
       'Certidão de nascimento do requerente',
       'Certidão de nascimento do pai/mãe',
       'Certidão de nascimento do avô/avó português(a)',
     ],
+    steps: [
+      'Verificar junto ao IRN se o pai/mãe tem registo de nacionalidade portuguesa',
+      'Consultar advogado com os documentos básicos em mãos',
+      'Definir o caminho documental com base na análise',
+    ],
+  },
+
+  result_neto_pesquisa: {
+    type: 'orange', icon: '🔎', tag: 'Pesquisa genealógica necessária',
+    title: 'É preciso localizar a origem do avô/avó primeiro',
+    prazo: 'Variável (pesquisa + processo)',
+    desc: 'Sem saber a localidade de origem do avô/avó português, fica difícil localizar os registos em Portugal. A boa notícia: existe serviço especializado de pesquisa genealógica que consegue rastrear a origem mesmo com informações limitadas.',
+    docs: [
+      'Qualquer documento que mencione o nome completo do avô/avó',
+      'Fotos antigas, cartas ou objetos com referências a Portugal',
+      'Documentos de casamento ou falecimento no Brasil',
+    ],
+    steps: [
+      'Contratar serviço de pesquisa genealógica especializado',
+      'Localizar a paróquia ou conservatória de origem do avô/avó',
+      'Obter o assento de nascimento português',
+      'Iniciar o processo de cidadania com a documentação localizada',
+    ],
   },
 
   result_bisneto_ok: {
-    type: 'green',
-    icon: '🆕',
-    tag: 'Via disponível (Lei 1/2026)',
+    type: 'green', icon: '🆕', tag: 'Via disponível — Lei 1/2026',
     title: 'Bisneto com residência — novo caminho aberto',
-    desc: 'A Lei Orgânica 1/2026 criou uma via inédita para bisnetos de portugueses que residam legalmente em Portugal há pelo menos 5 anos. Como você já cumpre esse requisito, seu caso é elegível. Procure orientação para iniciar o processo assim que a regulamentação for publicada.',
+    prazo: 'A regulamentar (Lei 1/2026)',
+    desc: 'A Lei Orgânica 1/2026 criou uma via inédita para bisnetos que residam legalmente em Portugal há pelo menos 5 anos. Você cumpre esse requisito. Aguarde a publicação da regulamentação para iniciar o processo.',
     docs: [
-      'Certidão de nascimento do requerente (com apostila)',
-      'Certidão de nascimento do pai/mãe',
-      'Certidão de nascimento do avô/avó',
+      'Certidão de nascimento do requerente (apostilada)',
+      'Certidão de nascimento do pai/mãe e do avô/avó',
       'Certidão de nascimento do bisavô/bisavó português(a)',
+      'Assento de nascimento do bisavô/bisavó nos registros portugueses',
       'Prova de residência legal em Portugal (5+ anos)',
       'Autorização de residência válida',
+    ],
+    steps: [
+      'Reunir documentação genealógica completa (4 gerações)',
+      'Manter autorização de residência sempre atualizada',
+      'Aguardar publicação da regulamentação da Lei 1/2026',
+      'Submeter pedido assim que regulamentado',
+    ],
+  },
+
+  result_bisneto_aguardar: {
+    type: 'yellow', icon: '⏳', tag: 'Quase lá',
+    title: 'Bisneto — acumular o tempo de residência',
+    prazo: 'Quando completar 5 anos de residência',
+    desc: 'Você está no caminho certo. Quando completar 5 anos de residência legal em Portugal, poderá solicitar a nacionalidade pela via de bisneto. Use esse tempo para organizar a documentação genealógica.',
+    docs: [
+      'Certidão de nascimento do requerente',
+      'Certidão de nascimento do pai/mãe e do avô/avó',
+      'Certidão de nascimento do bisavô/bisavó português(a)',
+      'Comprovantes de residência legal acumulados mês a mês',
+    ],
+    steps: [
+      'Manter a autorização de residência sempre renovada',
+      'Guardar todos os comprovantes de residência',
+      'Iniciar a pesquisa genealógica agora (leva tempo)',
+      'Solicitar quando completar 5 anos de residência',
+    ],
+  },
+
+  result_bisneto_cedo: {
+    type: 'orange', icon: '📅', tag: 'Prazo insuficiente',
+    title: 'Bisneto — residência ainda muito recente',
+    prazo: 'Após completar 5 anos de residência',
+    desc: 'Com menos de 2 anos de residência, ainda falta um tempo considerável para atingir os 5 anos exigidos. Use esse período para organizar a documentação genealógica e estar pronto quando chegar a hora.',
+    docs: [],
+    steps: [
+      'Manter a autorização de residência sempre renovada',
+      'Guardar todos os comprovantes de residência desde o início',
+      'Iniciar pesquisa genealógica para localizar documentos do bisavô/avó',
+      'Consultar advogado quando se aproximar dos 5 anos',
     ],
   },
 
   result_bisneto_nao: {
-    type: 'orange',
-    icon: '✈️',
-    tag: 'Atenção — requisito não cumprido',
+    type: 'orange', icon: '✈️', tag: 'Requisito não cumprido',
     title: 'Bisneto sem residência em Portugal',
-    desc: 'A via para bisnetos criada pela Lei 1/2026 exige residência legal em Portugal de pelo menos 5 anos. Quem está no Brasil não pode usar este caminho. Avalie se há outra via disponível no seu caso (descendência via avô, casamento, etc.) ou planeje uma eventual mudança para Portugal.',
+    prazo: 'Não aplicável — veja alternativas',
+    desc: 'A via para bisnetos da Lei 1/2026 exige residência legal em Portugal de pelo menos 5 anos. Quem está no Brasil não pode usar este caminho. Verifique se há outra via disponível no seu caso.',
     docs: [],
-  },
-
-  result_bisneto_aguardar: {
-    type: 'yellow',
-    icon: '⏳',
-    tag: 'Quase lá',
-    title: 'Bisneto — acumular o tempo restante',
-    desc: 'Você está no caminho certo! Quando completar 5 anos de residência legal em Portugal, poderá solicitar a nacionalidade pela via de bisneto (Lei 1/2026). Enquanto isso, organize a documentação genealógica para acelerar o processo quando chegar a hora.',
-    docs: [
-      'Certidão de nascimento do requerente',
-      'Certidão de nascimento do pai/mãe',
-      'Certidão de nascimento do avô/avó',
-      'Certidão de nascimento do bisavô/bisavó português(a)',
-      'Comprovantes de residência legal em Portugal',
+    steps: [
+      'Verificar se há outro vínculo (neto, casamento, etc.) disponível',
+      'Avaliar possibilidade de mudança para Portugal no futuro',
+      'Consultar advogado para análise de alternativas',
     ],
   },
 
   result_conjuge_ok: {
-    type: 'green',
-    icon: '💍',
-    tag: 'Elegível',
+    type: 'green', icon: '💍', tag: 'Elegível',
     title: 'Cidadania por casamento / união de facto',
-    desc: 'Com 3 ou mais anos de casamento ou união de facto com cidadão(ã) português(a), você tem direito a solicitar a nacionalidade por esta via. O processo dura entre 24 e 48 meses e exige comprovação sólida da relação.',
+    prazo: '24 a 48 meses',
+    desc: 'Com 3 ou mais anos de casamento ou união de facto e comprovantes sólidos da vida em comum, você tem boas condições para solicitar a nacionalidade.',
     docs: [
-      'Certidão de casamento ou prova de união de facto (apostilada)',
+      'Certidão de casamento ou declaração de união de facto (apostilada)',
       'Certidão de nascimento do requerente (apostilada)',
-      'Prova de nacionalidade portuguesa do cônjuge/companheiro(a)',
-      'Comprovantes da vida em comum (residência, finanças, fotos)',
-      'Atestado de residência ou visto válido',
+      'Prova de nacionalidade portuguesa do cônjuge',
+      'Comprovantes da vida em comum (conta bancária, contratos, fotos)',
+      'Declarações de residência conjunta',
+    ],
+    steps: [
+      'Organizar e apostilar certidão de casamento ou declaração de união',
+      'Reunir comprovantes de vida em comum em ordem cronológica',
+      'Confirmar que o cônjuge tem a documentação portuguesa em ordem',
+      'Submeter pedido no IRN via advogado habilitado',
+    ],
+  },
+
+  result_conjuge_fracos: {
+    type: 'yellow', icon: '📂', tag: 'Reforçar documentação',
+    title: 'Casamento elegível — fortalecer os comprovantes',
+    prazo: '24 a 48 meses (após organizar documentação)',
+    desc: 'Você é elegível, mas comprovantes fracos ou desorganizados podem atrasar ou complicar o processo. Vale a pena investir algumas semanas em organizar a documentação antes de submeter o pedido.',
+    docs: [
+      'Certidão de casamento ou declaração de união de facto (apostilada)',
+      'Extrato bancário conjunto ou cartão de crédito adicional',
+      'Contrato de arrendamento com ambos os nomes',
+      'Fotos com datas (viagens, aniversários, família)',
+      'Declarações de familiares ou testemunhas',
+    ],
+    steps: [
+      'Organizar e digitalizar todos os comprovantes existentes',
+      'Abrir conta bancária conjunta se ainda não tiver',
+      'Obter declaração de residência conjunta',
+      'Consultar advogado para avaliar se a documentação é suficiente',
+    ],
+  },
+
+  result_conjuge_sem_prova: {
+    type: 'orange', icon: '⚠️', tag: 'Documentação insuficiente',
+    title: 'Casamento — ausência de comprovantes é um obstáculo',
+    prazo: 'Após construir comprovantes',
+    desc: 'Sem comprovantes da vida em comum, o processo tem alto risco de indeferimento. O IRN exige evidências concretas do relacionamento. É necessário construir esse histórico antes de submeter o pedido.',
+    docs: [
+      'Conta bancária conjunta (mínimo 6-12 meses de histórico)',
+      'Contrato de arrendamento ou escritura conjunta',
+      'Declaração de IRS conjunta',
+      'Registos de viagens em comum',
+    ],
+    steps: [
+      'Abrir conta bancária conjunta imediatamente',
+      'Registrar endereço conjunto em documentos oficiais',
+      'Acumular comprovantes durante pelo menos 6-12 meses',
+      'Consultar advogado antes de submeter o pedido',
     ],
   },
 
   result_conjuge_cedo: {
-    type: 'orange',
-    icon: '⏳',
-    tag: 'Ainda não elegível',
-    title: 'Casamento — aguardar 3 anos de relação',
-    desc: 'A lei exige pelo menos 3 anos de casamento ou união de facto comprovada para solicitar a cidadania por esta via. Continue documentando a relação — cada comprovante conta. Quando completar o prazo, o processo fica mais robusto.',
+    type: 'orange', icon: '⏳', tag: 'Ainda não elegível',
+    title: 'Casamento — aguardar os 3 anos',
+    prazo: 'Quando completar 3 anos de relação',
+    desc: 'A lei exige pelo menos 3 anos de casamento ou união de facto comprovada. Continue documentando a relação — cada comprovante conta para quando atingir o prazo.',
     docs: [
       'Certidão de casamento ou declaração de união de facto',
       'Comprovantes progressivos de vida em comum',
     ],
+    steps: [
+      'Continuar acumulando comprovantes da vida em comum',
+      'Manter documentação de viagens e estadias conjuntas',
+      'Consultar advogado quando se aproximar dos 3 anos',
+    ],
   },
 
   result_residencia_ok: {
-    type: 'green',
-    icon: '🏠',
-    tag: 'Elegível — brasileiros/CPLP',
-    title: 'Naturalização por residência — prazo cumprido',
-    desc: 'Com 7 ou mais anos de residência legal em Portugal, você (como brasileiro ou cidadão CPLP) atingiu o prazo exigido pela Lei Orgânica 1/2026 para solicitar a naturalização. Este é o caminho para quem não tem vínculo familiar direto com Portugal.',
+    type: 'green', icon: '🏠', tag: 'Elegível — brasileiro/CPLP',
+    title: 'Naturalização — prazo cumprido',
+    prazo: '20 a 32 meses de análise',
+    desc: 'Com 7 ou mais anos de residência legal em Portugal, você atingiu o prazo exigido pela Lei 1/2026 para solicitar a naturalização como brasileiro ou cidadão CPLP.',
     docs: [
-      'Autorização de residência válida (histórico de 7 anos)',
+      'Autorização de residência (histórico completo de 7 anos)',
       'Certidão de nascimento apostilada',
-      'Comprovantes de residência em Portugal',
-      'Prova de meios de subsistência',
-      'Certificado de registo criminal (Brasil e Portugal)',
-      'Prova de ligação à comunidade portuguesa',
+      'Passaporte válido',
+      'Comprovantes de residência contínua em Portugal',
+      'Prova de meios de subsistência (declaração de IRS ou contrato de trabalho)',
+      'Certificado de registo criminal do Brasil e de Portugal',
+      'Prova de conhecimento de língua portuguesa (se aplicável)',
+    ],
+    steps: [
+      'Obter certificado de registo criminal atualizado do Brasil',
+      'Reunir histórico completo de autorizações de residência',
+      'Comprovar meios de subsistência (IRS ou contrato de trabalho)',
+      'Submeter pedido de naturalização no IRN',
     ],
   },
 
   result_residencia_ok5: {
-    type: 'green',
-    icon: '🏠',
-    tag: 'Elegível — outros países',
-    title: 'Naturalização por residência — prazo cumprido',
+    type: 'green', icon: '🏠', tag: 'Elegível — outros países',
+    title: 'Naturalização — prazo cumprido',
+    prazo: '20 a 32 meses de análise',
     desc: 'Para nacionais de países fora da CPLP, o prazo é de 5 anos de residência legal. Você já cumpriu esse requisito e pode solicitar a naturalização.',
     docs: [
-      'Autorização de residência válida (histórico de 5 anos)',
+      'Autorização de residência (histórico de 5 anos)',
       'Certidão de nascimento apostilada',
+      'Passaporte válido',
       'Comprovantes de residência contínua em Portugal',
-      'Prova de meios de subsistência',
       'Certificado de registo criminal do país de origem e de Portugal',
+      'Prova de meios de subsistência',
+    ],
+    steps: [
+      'Obter registo criminal atualizado no país de origem',
+      'Reunir histórico completo de autorizações de residência',
+      'Comprovar meios de subsistência',
+      'Submeter pedido de naturalização no IRN',
     ],
   },
 
   result_residencia_quase: {
-    type: 'yellow',
-    icon: '⏳',
-    tag: 'Quase elegível',
-    title: 'Residência entre 5 e 7 anos — verifique seu caso',
-    desc: 'Se você é de um país fora da CPLP, com 5 anos já é elegível. Se é brasileiro, a Lei 1/2026 aumentou o prazo para 7 anos. Verifique qual regra se aplica ao seu caso e, se ainda não atingiu o prazo, organize a documentação para estar pronto quando chegar a hora.',
+    type: 'yellow', icon: '⏳', tag: 'Quase elegível',
+    title: 'Residência entre 5 e 7 anos — confirme seu caso',
+    prazo: 'Quando completar 7 anos (brasileiro) ou já elegível (outro país)',
+    desc: 'Se você é de um país fora da CPLP, com 5 anos já é elegível. Se é brasileiro, a Lei 1/2026 exige 7 anos. Verifique qual regra se aplica e organize a documentação para estar pronto.',
     docs: [
       'Autorização de residência atualizada',
-      'Histórico de entradas e saídas de Portugal',
+      'Histórico de entradas e saídas de Portugal (SEF/AIMA)',
       'Comprovantes de residência contínua',
+    ],
+    steps: [
+      'Confirmar com advogado qual prazo se aplica ao seu caso',
+      'Manter autorização de residência sempre renovada',
+      'Guardar todos os comprovantes de residência',
+      'Submeter pedido quando atingir o prazo correto',
     ],
   },
 
   result_residencia_cedo: {
-    type: 'orange',
-    icon: '📅',
-    tag: 'Prazo insuficiente',
-    title: 'Residência — prazo ainda não cumprido',
-    desc: 'Infelizmente, menos de 5 anos de residência não é suficiente para solicitar a naturalização por esta via. Continue acumulando o tempo e organize os documentos para estar pronto quando atingir o prazo exigido.',
+    type: 'orange', icon: '📅', tag: 'Prazo insuficiente',
+    title: 'Residência — tempo ainda não cumprido',
+    prazo: 'Após cumprir o prazo mínimo',
+    desc: 'Menos de 5 anos de residência não é suficiente para a naturalização. Use esse tempo para organizar os documentos e estar pronto quando atingir o prazo exigido.',
     docs: [
       'Mantenha a autorização de residência sempre renovada',
-      'Guarde comprovantes de residência mês a mês',
+      'Guarde comprovantes de residência desde o início',
+    ],
+    steps: [
+      'Renovar autorização de residência antes do vencimento',
+      'Guardar toda a documentação de residência acumulada',
+      'Verificar se existe outro caminho disponível no seu caso (descendência, casamento)',
+      'Consultar advogado quando se aproximar do prazo',
     ],
   },
 
   result_nenhum: {
-    type: 'red',
-    icon: '❓',
-    tag: 'Sem via identificada',
+    type: 'red', icon: '❓', tag: 'Nenhuma via identificada',
     title: 'Nenhuma via direta identificada',
-    desc: 'Com base nas suas respostas, não identificamos uma via direta para a cidadania portuguesa no momento. Isso não significa que seja impossível — pode haver situações específicas (por exemplo, ascendência que você desconhece, ou sefardita antes de 2026) que um especialista pode identificar ao analisar sua família.',
+    prazo: null,
+    desc: 'Com base nas suas respostas, não identificamos uma via direta para a cidadania portuguesa no momento. Isso não significa que seja impossível — pode haver vínculos que você desconhece (ascendência não mapeada, por exemplo). Um especialista pode investigar.',
     docs: [],
+    steps: [
+      'Pesquisar a árvore genealógica para identificar possíveis ancestrais portugueses',
+      'Consultar advogado especializado para análise do histórico familiar',
+      'Verificar se há algum casamento ou residência futura que possa abrir um caminho',
+    ],
   },
 };
 
-// ═══════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
 //  ENGINE DO QUIZ
-// ═══════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
 
-let history = [];
+let history    = [];
 let currentKey = 'q1';
-let totalSteps = 6;
-let stepNum = 1;
+let stepNum    = 1;
+
+// Calcula profundidade máxima dinamicamente
+function maxDepth(key, visited = new Set()) {
+  if (visited.has(key)) return 0;
+  visited.add(key);
+  if (key.startsWith('result_') || !QUESTIONS[key]) return 0;
+  const depths = QUESTIONS[key].options.map(o => 1 + maxDepth(o.next, new Set(visited)));
+  return Math.max(...depths);
+}
+const TOTAL_STEPS = 1 + maxDepth('q1'); // profundidade real da árvore
 
 function startQuiz() {
-  document.getElementById('intro').style.display = 'none';
-  document.getElementById('quiz').style.display = 'block';
-  history = [];
+  history    = [];
   currentKey = 'q1';
-  stepNum = 1;
-  renderQuestion(currentKey);
+  stepNum    = 1;
+  document.getElementById('intro').style.display  = 'none';
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('quiz').style.display   = 'block';
+  renderQuestion('q1');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function renderQuestion(key) {
@@ -901,24 +921,31 @@ function renderQuestion(key) {
   if (!q) { showResult('result_nenhum'); return; }
 
   document.getElementById('q-category').textContent = q.category;
-  document.getElementById('q-text').textContent = q.text;
-  document.getElementById('q-hint').textContent = q.hint;
+  document.getElementById('q-text').textContent     = q.text;
+  document.getElementById('q-hint').textContent     = q.hint;
 
   const opts = document.getElementById('q-options');
   opts.innerHTML = '';
+
   q.options.forEach(opt => {
     const btn = document.createElement('button');
     btn.className = 'opt-btn';
-    btn.innerHTML = `<div class="opt-icon">${opt.icon}</div><span>${opt.label}</span>`;
+    btn.setAttribute('role', 'listitem');
+    btn.innerHTML = `
+      <div class="opt-icon" aria-hidden="true">${opt.icon}</div>
+      <span>${opt.label}</span>
+      <span class="opt-arrow" aria-hidden="true">→</span>
+    `;
     btn.onclick = () => choose(key, opt.next);
     opts.appendChild(btn);
   });
 
-  // Progress
-  const pct = Math.min(Math.round((stepNum / totalSteps) * 100), 95);
+  // Progress dinâmico
+  const pct = Math.min(Math.round(((stepNum - 1) / TOTAL_STEPS) * 100), 90);
   document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('step-label').textContent = `Pergunta ${stepNum}`;
-  document.getElementById('step-count').textContent = `${stepNum} / ${totalSteps}`;
+  document.getElementById('step-label').textContent    = `Pergunta ${stepNum}`;
+  document.getElementById('step-count').textContent    = `${stepNum} de ${TOTAL_STEPS}`;
+  document.getElementById('progress-aria').setAttribute('aria-valuenow', pct);
   document.getElementById('btn-back').style.display = history.length > 0 ? 'flex' : 'none';
 }
 
@@ -930,39 +957,45 @@ function choose(fromKey, nextKey) {
 }
 
 function goBack() {
-  if (history.length === 0) return;
-  currentKey = history.pop();
-  stepNum = Math.max(1, stepNum - 1);
-
-  // Se voltou de um resultado
+  if (history.length === 0) {
+    document.getElementById('quiz').style.display  = 'none';
+    document.getElementById('intro').style.display = 'block';
+    return;
+  }
   document.getElementById('result').style.display = 'none';
-  document.getElementById('quiz').style.display = 'block';
+  document.getElementById('quiz').style.display   = 'block';
+  currentKey = history.pop();
+  stepNum    = Math.max(1, stepNum - 1);
   renderQuestion(currentKey);
 }
 
 function showResult(key) {
   const r = RESULTS[key] || RESULTS['result_nenhum'];
 
-  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('quiz').style.display   = 'none';
   document.getElementById('result').style.display = 'block';
 
-  // Icon
-  const iconColors = { green:'icon-green', yellow:'icon-yellow', orange:'icon-orange', red:'icon-red' };
-  const iconEl = document.getElementById('r-icon');
-  iconEl.className = `result-icon ${iconColors[r.type] || 'icon-yellow'}`;
-  iconEl.textContent = r.icon;
-
-  // Tag
-  const tagColors = { green:'tag-green', yellow:'tag-yellow', orange:'tag-orange', red:'tag-red' };
+  // Ícone e tag
+  const tagClasses = { green: 'tag-green', yellow: 'tag-yellow', orange: 'tag-orange', red: 'tag-red' };
+  document.getElementById('r-icon').textContent   = r.icon;
   const tagEl = document.getElementById('r-tag');
-  tagEl.className = `result-tag ${tagColors[r.type] || 'tag-yellow'}`;
+  tagEl.className = 'result-tag ' + (tagClasses[r.type] || 'tag-yellow');
   tagEl.textContent = r.tag;
 
   document.getElementById('r-title').textContent = r.title;
   document.getElementById('r-desc').textContent  = r.desc;
 
-  // Docs
-  const docsBox = document.getElementById('r-docs-box');
+  // Prazo
+  const timelineEl = document.getElementById('r-timeline');
+  if (r.prazo) {
+    document.getElementById('r-prazo').textContent = r.prazo;
+    timelineEl.style.display = 'flex';
+  } else {
+    timelineEl.style.display = 'none';
+  }
+
+  // Documentos
+  const docsBox  = document.getElementById('r-docs-box');
   const docsList = document.getElementById('r-docs');
   if (r.docs && r.docs.length > 0) {
     docsList.innerHTML = r.docs.map(d => `<li>${d}</li>`).join('');
@@ -971,38 +1004,102 @@ function showResult(key) {
     docsBox.style.display = 'none';
   }
 
+  // Próximos passos
+  const stepsBox = document.getElementById('r-steps-box');
+  const stepsList = document.getElementById('r-steps');
+  if (r.steps && r.steps.length > 0) {
+    stepsList.innerHTML = r.steps.map(s => `<li>${s}</li>`).join('');
+    stepsBox.style.display = 'block';
+  } else {
+    stepsBox.style.display = 'none';
+  }
+
+  // Progress: 100%
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('quiz').style.display = 'none';
+
   document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function restartQuiz() {
-  document.getElementById('result').style.display = 'none';
+  document.getElementById('result').style.display  = 'none';
   document.getElementById('thankyou').style.display = 'none';
   document.getElementById('lead-form').style.display = 'flex';
-  history = [];
+  document.getElementById('btn-submit').disabled = false;
+
+  // Limpar campos e erros
+  ['lead-name','lead-email','lead-phone'].forEach(id => {
+    const el = document.getElementById(id);
+    el.value = '';
+    el.classList.remove('error');
+  });
+  ['err-name','err-email'].forEach(id => {
+    document.getElementById(id).classList.remove('visible');
+  });
+
+  history    = [];
   currentKey = 'q1';
-  stepNum = 1;
+  stepNum    = 1;
   document.getElementById('intro').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function submitLead() {
-  const name  = document.getElementById('lead-name').value.trim();
-  const email = document.getElementById('lead-email').value.trim();
-  const phone = document.getElementById('lead-phone').value.trim();
+// Validação em tempo real
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('lead-name').addEventListener('input', function() {
+    const err = document.getElementById('err-name');
+    if (this.value.trim().length > 1) {
+      this.classList.remove('error');
+      err.classList.remove('visible');
+    }
+  });
 
-  if (!name || !email) {
-    alert('Por favor, preencha pelo menos nome e e-mail.');
-    return;
+  document.getElementById('lead-email').addEventListener('input', function() {
+    const err = document.getElementById('err-email');
+    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value.trim());
+    if (valid) {
+      this.classList.remove('error');
+      err.classList.remove('visible');
+    }
+  });
+});
+
+function submitLead() {
+  const nameEl  = document.getElementById('lead-name');
+  const emailEl = document.getElementById('lead-email');
+  const phoneEl = document.getElementById('lead-phone');
+  const btn     = document.getElementById('btn-submit');
+
+  let valid = true;
+
+  // Validar nome
+  if (nameEl.value.trim().length < 2) {
+    nameEl.classList.add('error');
+    document.getElementById('err-name').classList.add('visible');
+    valid = false;
   }
 
-  // Redireciona para WhatsApp com dados preenchidos
-  const msg = encodeURIComponent(
-    `Olá! Fiz o quiz de cidadania portuguesa.\n\nNome: ${name}\nE-mail: ${email}\nWhatsApp: ${phone}\n\nGostaria de uma análise gratuita do meu caso.`
-  );
-  window.open(`https://wa.me/351913134260?text=${msg}`, '_blank');
+  // Validar email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(emailEl.value.trim())) {
+    emailEl.classList.add('error');
+    document.getElementById('err-email').classList.add('visible');
+    valid = false;
+  }
 
-  document.getElementById('lead-form').style.display = 'none';
-  document.getElementById('thankyou').style.display = 'block';
+  if (!valid) return;
+
+  btn.disabled     = true;
+  btn.textContent  = 'Enviando...';
+
+  const msg = encodeURIComponent(
+    `Olá! Fiz o quiz de cidadania portuguesa.\n\nNome: ${nameEl.value.trim()}\nE-mail: ${emailEl.value.trim()}\nWhatsApp: ${phoneEl.value.trim() || 'Não informado'}\n\nGostaria de uma análise gratuita do meu caso.`
+  );
+
+  window.open(`https://wa.me/351913134260?text=${msg}`, '_blank', 'noopener,noreferrer');
+
+  document.getElementById('lead-form').style.display  = 'none';
+  document.getElementById('thankyou').style.display   = 'block';
 }
 </script>
 
