@@ -406,7 +406,7 @@ const QUESTIONS = {
     options: [
       { icon: '👶', label: 'Sou filho(a) de cidadão(ã) português(a)',             next: 'q_filho_idade' },
       { icon: '👴', label: 'Sou neto(a) de avô/avó português(a)',                 next: 'q_neto_vivo' },
-      { icon: '👵', label: 'Sou bisneto(a) de bisavô/bisavó português(a)',        next: 'q_bisneto_res' },
+      { icon: '👵', label: 'Sou bisneto(a) de bisavô/bisavó português(a)',        next: 'q_bisneto_avo' },
       { icon: '💍', label: 'Sou casado(a) / união de facto com português(a)',     next: 'q_conjuge_tempo' },
       { icon: '🏡', label: 'Resido legalmente em Portugal',                       next: 'q_residencia_anos' },
       { icon: '❓', label: 'Nenhuma das anteriores',                              next: 'result_nenhum' },
@@ -448,11 +448,21 @@ const QUESTIONS = {
 
   q_neto_sem_obito: {
     category: 'Descendência — Netos',
-    text: 'Você sabe em qual município de Portugal o avô/avó nasceu ou foi registado?',
-    hint: 'Com a localidade de origem, é possível fazer pesquisa genealógica para localizar os documentos.',
+    text: 'Você tem acesso à certidão de óbito do avô/avó português(a)?',
+    hint: 'A certidão de óbito é obrigatória quando o avô/avó já faleceu para comprovar a cadeia de descendência.',
     options: [
-      { icon: '✅', label: 'Sim, sei a localidade de origem',   next: 'q_neto_pai_pt' },
-      { icon: '❌', label: 'Não sei a localidade de origem',    next: 'result_neto_pesquisa' },
+      { icon: '✅', label: 'Sim, tenho ou consigo obter',           next: 'q_neto_pai_pt' },
+      { icon: '⚠️', label: 'Não tenho — não sei onde obter',       next: 'q_neto_origem' },
+    ],
+  },
+
+  q_neto_origem: {
+    category: 'Descendência — Netos',
+    text: 'Você sabe em qual região ou município de Portugal o avô/avó nasceu?',
+    hint: 'Com a localidade de origem é possível fazer pesquisa nas conservatórias e arquivos paroquiais portugueses.',
+    options: [
+      { icon: '📍', label: 'Sim, sei a cidade ou região de origem',  next: 'q_neto_pai_pt' },
+      { icon: '❌', label: 'Não, não tenho essa informação',         next: 'result_neto_pesquisa' },
     ],
   },
 
@@ -468,6 +478,38 @@ const QUESTIONS = {
   },
 
   // ── BISNETOS ────────────────────────────────────────
+  q_bisneto_avo: {
+    category: 'Descendência — Bisnetos',
+    text: 'O avô ou avó (filho(a) do bisavô/bisavó português) ainda está vivo(a)?',
+    hint: 'A situação do avô/avó intermediário afeta quais documentos são exigidos para fechar a cadeia de 4 gerações.',
+    options: [
+      { icon: '😊', label: 'Sim, está vivo(a)',           next: 'q_bisneto_avo_pt' },
+      { icon: '🕊️', label: 'Não, já faleceu',            next: 'q_bisneto_obito_avo' },
+      { icon: '🤷', label: 'Não tenho certeza',           next: 'q_bisneto_avo_pt' },
+    ],
+  },
+
+  q_bisneto_obito_avo: {
+    category: 'Descendência — Bisnetos',
+    text: 'Você tem acesso à certidão de óbito desse avô/avó?',
+    hint: 'Quando o avô/avó (elo intermediário) já faleceu, a certidão de óbito é necessária para fechar a cadeia documental de 4 gerações.',
+    options: [
+      { icon: '✅', label: 'Sim, tenho ou consigo obter',       next: 'q_bisneto_avo_pt' },
+      { icon: '⚠️', label: 'Não tenho — pode ser difícil',     next: 'q_bisneto_avo_pt' },
+    ],
+  },
+
+  q_bisneto_avo_pt: {
+    category: 'Descendência — Bisnetos',
+    text: 'Esse avô/avó (filho(a) do bisavô/bisavó português) chegou a ter a nacionalidade portuguesa?',
+    hint: 'Se o avô/avó também tem ou teve a nacionalidade portuguesa, a cadeia documental é mais sólida e o processo mais direto.',
+    options: [
+      { icon: '✅', label: 'Sim, tem ou teve nacionalidade portuguesa', next: 'q_bisneto_res' },
+      { icon: '❌', label: 'Não, nunca teve nacionalidade portuguesa',  next: 'q_bisneto_res' },
+      { icon: '🤷', label: 'Não sei informar',                         next: 'q_bisneto_res' },
+    ],
+  },
+
   q_bisneto_res: {
     category: 'Descendência — Bisnetos',
     text: 'Você reside legalmente em Portugal?',
